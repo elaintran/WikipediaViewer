@@ -86,17 +86,11 @@ input:focus, input:active, button:active, button:focus {
     box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.1);
 }
 
-.u-autocomplete a {
+.ui-autocomplete a {
   font-weight: normal;
   color: #333333;
 }
 
-
-.ui-state-active,
-.ui-state-focus {
-  color: #23527c;
-  background-color: #eeeeee;
-}
 
 .ui-state-hover,
 .ui-widget-content .ui-state-hover,
@@ -107,6 +101,17 @@ input:focus, input:active, button:active, button:focus {
 	border: 1px solid transparent;
 	font-weight: normal;
 	color: #212121;
+  	background: #eeeeee;
+}
+
+.ui-widget-header > li:first-child,
+.ui-widget-content > li:first-child {
+    border-radius: 10px 10px 0 0;
+}
+
+.ui-widget-header > li:last-child,
+.ui-widget-content > li:last-child {
+    border-radius: 0 0 10px 10px;
 }
 
 
