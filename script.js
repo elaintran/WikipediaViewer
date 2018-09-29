@@ -1,3 +1,23 @@
+$(document).ready(function() {
+  // enter key event to serve as button 
+  $(".query").keypress(function (e) {
+    var key = e.which;
+    if (key == 13) // enter key is true
+      {
+        $(".search-button").click()
+        return false;
+      }
+  });
+    $(".search-button").on("click", function () {
+        var srchTerm;
+        srchTerm = $(".query").val();
+        if (srchTerm.length > 0) {
+            runSearch(srchTerm);
+            $(".query").autocomplete("close");
+        }
+    });
+});
+
 $('.query').autocomplete({
     source: function(request, response){
       $.ajax({
@@ -26,3 +46,31 @@ $('.query').autocomplete({
         my: "left-14 top+15",
     }
   });
+
+function runSearch(srchString) {
+    // declare wikipedia search url variable
+    var wikiURL;
+    //construct wikiURL string
+    wikiURL = 'https://en.wikipedia.org/w/api.php?';
+    wikiURL += 'action=query&gsrlimit=10&prop=extracts&exintro&explaintext&exsentences=2&exlimit=max&generator=search&gsrsearch=' + srchString;
+    wikiURL += '&format=json&callback=?';
+
+    $.getJSON(wikiURL, function(result) {
+        var resultHTML = "";
+
+        $.each(result.query.pages, function(i, val) {
+            
+            resultHTML += '<div class="resultTable"><a ' + link(val.pageid) + '>' + val.title + '</a><br /> ' + val.extract + '<br /><br /></div>';
+        });
+
+    $(".results").html(resultHTML);
+    }); 
+    
+    function link(pageID) {
+        return 'href="https://en.wikipedia.org/?curid=' + pageID + '" target="_blank"';
+    }
+}
+
+$("#reload").click(function() {
+  location.reload(true);
+});

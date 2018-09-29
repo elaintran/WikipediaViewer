@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400");
 
-
 html, body {
 	margin: 0;
 	padding: 0;
@@ -11,20 +10,20 @@ html, body {
 .container {
 	width: 100%;
 	text-align: center;
-	height: 100vh;
+/*	height: 100vh;*/
 	display: table;
 }
 
 .center {
 	display: table-cell;
-	vertical-align: middle;
+/*	vertical-align: middle;*/
 	margin: auto;
 }
 
 h1 {
 	font-size: 50px;
 	margin-bottom: 20px;
-	margin-top: 0px;
+/*	margin-top: 0px;*/
 	font-family: "Roboto Slab", sans-serif;
 }
 
@@ -83,7 +82,7 @@ input:focus, input:active, button:active, button:focus {
   border: 1px solid transparent;
   border-radius: 10px;
   background-color: #fff;
-    box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.1);
 }
 
 .ui-autocomplete a {
@@ -114,6 +113,22 @@ input:focus, input:active, button:active, button:focus {
     border-radius: 0 0 10px 10px;
 }
 
+.result-container {
+	width: 100%;
+	padding: 10px 0 5%;
+}
+
+.results {
+	width: 80%;
+	margin: auto;
+}
+
+.results a {
+	text-decoration: none;
+	color: #36c;
+	font-weight: bold;
+	font-size: 20px;
+}
 
 footer {
 	width: 100%;
