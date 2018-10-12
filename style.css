@@ -10,20 +10,20 @@ html, body {
 .container {
 	width: 100%;
 	text-align: center;
-/*	height: 100vh;*/
+	height: 100vh;
 	display: table;
 }
 
 .center {
 	display: table-cell;
-/*	vertical-align: middle;*/
+	vertical-align: middle;
 	margin: auto;
 }
 
 h1 {
-	font-size: 50px;
+	font-size: 60px;
 	margin-bottom: 20px;
-/*	margin-top: 0px;*/
+	margin-top: 0px;
 	font-family: "Roboto Slab", sans-serif;
 }
 
@@ -33,17 +33,30 @@ h1 {
 }
 
 .search {
-	background: white;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+#search {
 	border-radius: 30px;
-	width: 400px;
+    background-color: white;
+    overflow: hidden;
+    height: 46px;
+}
+
+/*.search {
+	background: white;
+	width: 100%;
 	padding: 5px;
 	margin: auto;
-}
+}*/
 
 input[type=text] {
 	border: 1px solid transparent;
-	padding: 10px;
-	width: 320px;
+	padding: 14px;
+  	width: 90%;
+  	position: relative;
 	font-style: italic;
 	caret-color: #36c;
 }
@@ -53,19 +66,28 @@ input:focus, input:active, button:active, button:focus {
 }
 
 .search-button {
+	position: absolute;
+	right: 0;
 	background-color: #36c;
+	margin: 5px;
 	border: 0px;
 	padding: 10px;
 	cursor: pointer;
 	color: white;
-}
-
-.search-button {
 	border-radius: 50%;
-	color: white;
-	float: right;
 	z-index: 10;
 }
+
+.wrap {
+	overflow: auto;
+	width: 60%;
+	margin: auto;
+}
+
+/*.wrap {
+	overflow: auto;
+	padding: 0 25%;
+}*/
 
 .random:active, .random {
 	text-decoration: none;
