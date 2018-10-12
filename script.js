@@ -43,7 +43,7 @@ $('.query').autocomplete({
     },
     //moves position of autocomplete
     position: {
-        my: "left-14 top+15",
+        my: "left-0 top+15",
     }
   });
 
