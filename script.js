@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    $(".result-container").hide();
+})
+
+$(document).ready(function() {
   // enter key event to serve as button 
   $(".query").keypress(function (e) {
     var key = e.which;
@@ -6,6 +10,9 @@ $(document).ready(function() {
       {
         $(".search-button").click()
         return false;
+        $(".result-container").show();
+        $(".container").css("height", 0);
+        $(".title").css("margin-top", "40px");
       }
   });
     $(".search-button").on("click", function () {
@@ -14,6 +21,9 @@ $(document).ready(function() {
         if (srchTerm.length > 0) {
             runSearch(srchTerm);
             $(".query").autocomplete("close");
+            $(".result-container").show();
+            $(".container").css("height", 0);
+            $(".title").css("margin-top", "40px");
         }
     });
 });
