@@ -23,7 +23,7 @@ $(document).ready(function() {
             $(".query").autocomplete("close");
             $(".result-container").show();
             $(".container").css("height", 0);
-            $(".title").css("margin-top", "40px");
+            $(".title").css("margin-top", "60px");
         }
     });
 });
@@ -70,7 +70,7 @@ function runSearch(srchString) {
 
         $.each(result.query.pages, function(i, val) {
             
-            resultHTML += '<div class="resultTable"><a ' + link(val.pageid) + '>' + val.title + '</a><br /> ' + val.extract + '<br /><br /></div>';
+            resultHTML += '<div class="resultTable"><a ' + link(val.pageid) + '>' + val.title + '</a><p> ' + val.extract + '</p></div>';
         });
 
     $(".results").html(resultHTML);
