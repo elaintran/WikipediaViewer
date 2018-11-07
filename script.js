@@ -23,7 +23,7 @@ $(document).ready(function() {
             $(".query").autocomplete("close");
             $(".result-container").show();
             $(".container").css("height", 0);
-            $(".title").css("margin-top", "60px");
+            $(".title").css("margin-top", "100px");
         }
     });
 });
