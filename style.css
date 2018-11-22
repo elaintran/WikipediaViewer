@@ -192,4 +192,7 @@ footer {
 	.wrap {
 		width: 80%;
 	}
+	.title {
+		font-size: 40px;
+	}
 } 
