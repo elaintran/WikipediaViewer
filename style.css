@@ -136,9 +136,10 @@ input:focus, input:active, button:active, button:focus {
     border-radius: 0 0 10px 10px;
 }
 
-.result-container {
+#result-container {
 	width: 100%;
 	padding: 10px 0 5%;
+	display: none;
 }
 
 .results {

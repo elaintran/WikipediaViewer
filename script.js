@@ -1,9 +1,16 @@
+const resultContainer = document.getElementById("result-container");
+const query = document.getElementById("query");
+
 //allows user search input on page load
 window.onload = function() {
-  document.getElementById("query").focus();
+  query.focus();
 };
 
-$(document).ready(function() {
+//let resultContainer = document.getElementById("result-container");
+
+
+//jquery
+/*$(document).ready(function() {
     $(".result-container").hide();
 })
 
@@ -15,7 +22,10 @@ $(document).ready(function() {
       {
         $(".search-button").click()
         return false;
-        $(".result-container").show();
+        function myFunction() {
+        document.getElementById("result-container").style.display = "block";
+      };
+        //$(".result-container").show();
         $(".container").css("height", 0);
         $(".title").css("margin-top", "40px");
       }
@@ -31,7 +41,7 @@ $(document).ready(function() {
             $(".title").css("margin-top", "100px");
         }
     });
-});
+});*/
 
 $('#query').autocomplete({
     source: function(request, response){
