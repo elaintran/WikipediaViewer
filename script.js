@@ -1,10 +1,15 @@
+//allows user search input on page load
+window.onload = function() {
+  document.getElementById("query").focus();
+};
+
 $(document).ready(function() {
     $(".result-container").hide();
 })
 
 $(document).ready(function() {
   // enter key event to serve as button 
-  $(".query").keypress(function (e) {
+  $("#query").keypress(function (e) {
     var key = e.which;
     if (key == 13) // enter key is true
       {
@@ -17,10 +22,10 @@ $(document).ready(function() {
   });
     $(".search-button").on("click", function () {
         var srchTerm;
-        srchTerm = $(".query").val();
+        srchTerm = $("#query").val();
         if (srchTerm.length > 0) {
             runSearch(srchTerm);
-            $(".query").autocomplete("close");
+            $("#query").autocomplete("close");
             $(".result-container").show();
             $(".container").css("height", 0);
             $(".title").css("margin-top", "100px");
@@ -28,7 +33,7 @@ $(document).ready(function() {
     });
 });
 
-$('.query').autocomplete({
+$('#query').autocomplete({
     source: function(request, response){
       $.ajax({
         url: "https://en.wikipedia.org/w/api.php",
@@ -48,7 +53,7 @@ $('.query').autocomplete({
     select: function(event, ui){
       if (event.which === 1){
         search(ui.item.value);
-        $(".query").val(ui.item.value);
+        $("#query").val(ui.item.value);
       }
     },
     //moves position of autocomplete
