@@ -1,11 +1,20 @@
-const resultContainer = document.getElementById("result-container");
-const query = document.getElementById("query");
+const resultContainer = document.querySelector("#result-container");
+const query = document.querySelector("#query");
+const searchButton = document.querySelector("#search-button");
 
 //allows user search input on page load
 window.onload = function() {
   query.focus();
 };
 
+query.addEventListener("keypress", function(e) {
+  let key = e.which;
+  if (key == 13) {
+    searchButton.click()
+    return false;
+    resultContainer.style.display = "block";
+  }
+});
 //let resultContainer = document.getElementById("result-container");
 
 
