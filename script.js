@@ -8,26 +8,33 @@ window.onload = function() {
   query.focus();
 };
 
-form.addEventListener("submit", handleSubmit);
+//submit form
+form.addEventListener("submit", submitInput);
 
-function handleSubmit(event) {
+function submitInput(event) {
   //prevent page reload upon submit
   event.preventDefault();
   //takes search input
   const input = query.value;
   //removes white space in search input
   const searchQuery = input.trim();
+  //submits if length more than 0
+  if (searchQuery.length > 0) {
   //display result-container
   resultContainer.style.display = "block";
   //change css
   document.querySelector(".container").style.height = 0;
   document.querySelector(".title").style.marginTop = "100px";
-  //fetchResults(searchQuery);
+  //getResults(searchQuery);
+  }
+  else {
+    return false;
+  }
 }
 
-/*function getResults(searchQuery) {
+function getResults(searchQuery) {
 
-}*/
+}
 
 /*query.addEventListener("keypress", function(e) {
   let key = e.which;
