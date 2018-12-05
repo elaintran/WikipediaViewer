@@ -2,6 +2,8 @@ const resultContainer = document.querySelector("#result-container");
 const query = document.querySelector("#query");
 const searchButton = document.querySelector("#search-button");
 const form = document.querySelector("#search-input");
+const container = document.querySelector(".container");
+const title = document.querySelector(".title");
 
 //allows cursor focus on search input upon page load
 window.onload = function() {
@@ -22,93 +24,55 @@ function submitInput(event) {
   if (searchQuery.length > 0) {
   //display result-container
   resultContainer.style.display = "block";
-  //change css
-  document.querySelector(".container").style.height = 0;
-  document.querySelector(".title").style.marginTop = "100px";
-  //getResults(searchQuery);
+  //change css on search container
+  container.style.height = 0;
+  title.style.marginTop = "100px";
+  //displays results
+  runSearch(searchQuery);
+  //closes autocomplete on submit
+  $("#query").autocomplete("close");
   }
   else {
     return false;
   }
 }
 
-function getResults(searchQuery) {
-
-}
-
-/*query.addEventListener("keypress", function(e) {
-  let key = e.which;
-  if (key == 13) {
-    searchButton.click()
-    return false;
-    resultContainer.style.display = "block";
-  }
-});*/
-//let resultContainer = document.getElementById("result-container");
-
-
-//jquery
-/*$(document).ready(function() {
-    $(".result-container").hide();
-})
-
-$(document).ready(function() {
-  // enter key event to serve as button 
-  $("#query").keypress(function (e) {
-    var key = e.which;
-    if (key == 13) // enter key is true
-      {
-        $(".search-button").click()
-        return false;
-        function myFunction() {
-        document.getElementById("result-container").style.display = "block";
-      };
-        //$(".result-container").show();
-        $(".container").css("height", 0);
-        $(".title").css("margin-top", "40px");
+//jQuery code for autocomplete
+$("#query").autocomplete({
+  source: function(request, response){
+    $.ajax({
+      url: "https://en.wikipedia.org/w/api.php",
+      dataType: "jsonp",
+      data: {
+        "action": "opensearch",
+        "format": "json",
+        "limit": 5,
+        "search": request.term
+      },
+      success: function(data){
+        response(data[1]);
       }
-  });
-    $(".search-button").on("click", function () {
-        var srchTerm;
-        srchTerm = $("#query").val();
-        if (srchTerm.length > 0) {
-            runSearch(srchTerm);
-            $("#query").autocomplete("close");
-            $(".result-container").show();
-            $(".container").css("height", 0);
-            $(".title").css("margin-top", "100px");
-        }
     });
-});*/
-
-$('#query').autocomplete({
-    source: function(request, response){
-      $.ajax({
-        url: "https://en.wikipedia.org/w/api.php",
-        dataType: "jsonp",
-        data: {
-          "action": "opensearch",
-          "format": "json",
-          "limit": 5,
-          "search": request.term
-        },
-        success: function(data){
-          response(data[1]);
-        }
-      });
-    },
-    //set limits to search
-    select: function(event, ui){
-      if (event.which === 1){
-        search(ui.item.value);
-        $("#query").val(ui.item.value);
-      }
-    },
-    //moves position of autocomplete
-    position: {
-        my: "left-0 top+15",
+  },
+  //set limits to search
+  select: function(event, ui){
+    if (event.which === 1){
+      search(ui.item.value);
+      $("#query").val(ui.item.value);
     }
-  });
+  },
+  //moves position of autocomplete
+  position: {
+    my: "left-0 top+15",
+  }
+});
+
+/*function runSearch(searchInput) {
+  const wikiURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchInput + "&format=json&callback=?";
+  $.getJSON(wikiURL, function(result) {
+
+  })
+}*/
 
 function runSearch(srchString) {
     // declare wikipedia search url variable
@@ -133,7 +97,3 @@ function runSearch(srchString) {
         return 'href="https://en.wikipedia.org/?curid=' + pageID + '" target="_blank"';
     }
 }
-
-$("#reload").click(function() {
-  location.reload(true);
-});

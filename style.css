@@ -20,7 +20,7 @@ html, body {
 	margin: auto;
 }
 
-h1 {
+.title {
 	font-size: 60px;
 	margin-bottom: 20px;
 	margin-top: 0px;
@@ -30,6 +30,12 @@ h1 {
 .title em {
 	color: #36c;
 	font-style: normal;
+}
+
+.search-container {
+	overflow: auto;
+	width: 600px;
+	margin: auto;
 }
 
 .search {
@@ -44,13 +50,6 @@ h1 {
     overflow: hidden;
     height: 46px;
 }
-
-/*.search {
-	background: white;
-	width: 100%;
-	padding: 5px;
-	margin: auto;
-}*/
 
 input[type=text] {
 	border: 1px solid transparent;
@@ -79,18 +78,6 @@ input:focus, input:active, button:active, button:focus {
 	z-index: 10;
 }
 
-.wrap {
-	overflow: auto;
-	width: 600px;
-/*	width: 55%;*/
-	margin: auto;
-}
-
-/*.wrap {
-	overflow: auto;
-	padding: 0 25%;
-}*/
-
 .random:active, .random {
 	text-decoration: none;
 	color: #36c;
@@ -112,7 +99,6 @@ input:focus, input:active, button:active, button:focus {
   font-weight: normal;
   color: #333333;
 }
-
 
 .ui-state-hover,
 .ui-widget-content .ui-state-hover,
@@ -155,19 +141,6 @@ input:focus, input:active, button:active, button:focus {
 	font-size: 20px;
 }
 
-/*.results {
-	padding: 0 30px;
-	background: #fcfcfc;
-	border-radius: 5px;
-	box-shadow: 2px 2px 4px rgba(0,0,0,.1);
-}
-
-.resultTable {
-	background: #fcfcfc;
-	padding: 30px 0px;
-	border-bottom: 0.5px solid #dadada;
-}*/
-
 .resultTable {
 	background: #fcfcfc;
 	padding: 20px;
@@ -180,17 +153,16 @@ input:focus, input:active, button:active, button:focus {
 	margin: 5px 0px 0px;
 }
 
-
-footer {
+/*footer {
 	width: 100%;
 	position: fixed;
 	bottom: 0;
 	text-align: center;
 	font-size: 14px;
-}
+}*/
 
 @media (max-width:700px) {
-	.wrap {
+	.search-container {
 		width: 80%;
 	}
 	.title {
