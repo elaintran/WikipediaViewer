@@ -54,12 +54,11 @@ $("#query").autocomplete({
       }
     });
   },
-  //set limits to search
-  select: function(event, ui){
-    if (event.which === 1){
-      search(ui.item.value);
-      $("#query").val(ui.item.value);
-    }
+  //submit upon selection of autocomplete
+  select: function(event, ui) {
+    $("#query").val(ui.item.value);
+    submitInput(event);
+    return false;
   },
   //moves position of autocomplete
   position: {

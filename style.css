@@ -88,11 +88,11 @@ input:focus, input:active, button:active, button:focus {
   	top: 0;
   	left: 0;
   	max-height: 200px;
-  	z-index: 9999;
   	border: 1px solid transparent;
   	border-radius: 10px;
   	background-color: #fff;
   	box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.1);
+  	z-index: 9999;
 }
 
 .ui-autocomplete a {
@@ -106,10 +106,10 @@ input:focus, input:active, button:active, button:focus {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-	border: 1px solid transparent;
 	font-weight: normal;
-	color: #212121;
   	background: #eeeeee;
+  	color: #212121;
+	border: 1px solid transparent;
 }
 
 /*rounds the top corners of autocomplete*/
