@@ -3,28 +3,28 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	background-color: #f0f0f0;
 	font-family: 'Roboto', sans-serif;
+	background-color: #f0f0f0;
 }
 
 .container {
 	width: 100%;
-	text-align: center;
 	height: 100vh;
 	display: table;
+	text-align: center;
 }
 
 .center {
+	margin: auto;
 	display: table-cell;
 	vertical-align: middle;
-	margin: auto;
 }
 
 .title {
-	font-size: 60px;
-	margin-bottom: 20px;
-	margin-top: 0px;
 	font-family: "Roboto Slab", sans-serif;
+	font-size: 60px;
+	margin-top: 0px;
+	margin-bottom: 20px;
 }
 
 .title em {
@@ -33,9 +33,9 @@ html, body {
 }
 
 .search-container {
-	overflow: auto;
-	width: 600px;
 	margin: auto;
+	width: 600px;
+	overflow: auto;
 }
 
 .search {
@@ -45,18 +45,18 @@ html, body {
 }
 
 #search-input {
-	border-radius: 30px;
     background-color: white;
-    overflow: hidden;
     height: 46px;
+	border-radius: 30px;
+    overflow: hidden;
 }
 
 input[type=text] {
-	border: 1px solid transparent;
-	padding: 14px 4%;
-  	width: 91%;
-  	position: relative;
 	font-style: italic;
+  	position: relative;
+ 	padding: 14px 4%;
+  	width: 91%;
+	border: 1px solid transparent;
 	caret-color: #36c;
 }
 
@@ -65,16 +65,16 @@ input:focus, input:active, button:active, button:focus {
 }
 
 .search-button {
+	padding: 10px;
+	margin: 5px;
+	background-color: #36c;
+	color: white;
 	position: absolute;
 	top: 0;
 	right: 0;
-	background-color: #36c;
-	margin: 5px;
 	border: 0px;
-	padding: 10px;
-	cursor: pointer;
-	color: white;
 	border-radius: 50%;
+	cursor: pointer;
 	z-index: 10;
 }
 
@@ -84,20 +84,20 @@ input:focus, input:active, button:active, button:focus {
 }
 
 .ui-autocomplete {
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-height: 200px;
-  z-index: 9999;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.1);
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	max-height: 200px;
+  	z-index: 9999;
+  	border: 1px solid transparent;
+  	border-radius: 10px;
+  	background-color: #fff;
+  	box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.1);
 }
 
 .ui-autocomplete a {
-  font-weight: normal;
-  color: #333333;
+  	font-weight: normal;
+  	color: #333333;
 }
 
 .ui-state-hover,
@@ -112,39 +112,41 @@ input:focus, input:active, button:active, button:focus {
   	background: #eeeeee;
 }
 
+/*rounds the top corners of autocomplete*/
 .ui-widget-header > li:first-child,
 .ui-widget-content > li:first-child {
     border-radius: 10px 10px 0 0;
 }
 
+/*rounds the bottom corners of autocomplete*/
 .ui-widget-header > li:last-child,
 .ui-widget-content > li:last-child {
     border-radius: 0 0 10px 10px;
 }
 
 #result-container {
-	width: 100%;
 	padding: 10px 0 5%;
+	width: 100%;
 	display: none;
 }
 
 .results {
-	width: 75%;
-	margin: auto;
 	padding: 0;
+	margin: auto;
+	width: 75%;
 }
 
 .results a {
-	text-decoration: none;
-	color: #36c;
-	font-weight: bold;
 	font-size: 20px;
+	font-weight: bold;
+	color: #36c;
+	text-decoration: none;
 }
 
 .resultTable {
-	background: #fcfcfc;
 	padding: 20px;
 	margin: 10px;
+	background-color: #fcfcfc;
 	border-radius: 5px;
 	box-shadow: 2px 2px 4px rgba(0,0,0,.1)
 }
