@@ -73,7 +73,14 @@ $("#query").autocomplete({
   })
 }*/
 
-function runSearch(srchString) {
+function runSearch(searchInput) {
+  const wikiURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchInput + "&format=json&callback=?";
+  $.getJSON (wikiURL, function(data) {
+    console.log(data);
+  });
+}
+
+/*function runSearch(srchString) {
     // declare wikipedia search url variable
     var wikiURL;
     //construct wikiURL string
@@ -95,4 +102,4 @@ function runSearch(srchString) {
     function link(pageID) {
         return 'href="https://en.wikipedia.org/?curid=' + pageID + '" target="_blank"';
     }
-}
+}*/
