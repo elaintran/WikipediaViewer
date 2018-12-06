@@ -4,6 +4,7 @@ const searchButton = document.querySelector("#search-button");
 const form = document.querySelector("#search-input");
 const container = document.querySelector(".container");
 const title = document.querySelector(".title");
+const footer = document.querySelector("footer");
 
 //allows cursor focus on search input upon page load
 window.onload = function() {
@@ -24,6 +25,7 @@ function submitInput(event) {
   if (searchQuery.length > 0) {
   //display result-container
   resultContainer.style.display = "block";
+  footer.style.display = "block";
   //change css on search container
   container.style.height = 0;
   title.style.marginTop = "100px";
@@ -76,7 +78,7 @@ function runSearch(searchInput) {
     }
     else {
       for (var i = 0; i < data[1].length; i++) {
-        $(".results").append("<div class='resultTable'>" + "<a href ='" + data[3][i] + "'>" + data[1][i] + "</a><p>" + data[2][i] + "</p></div>");
+        $(".results").append("<div class='result-list'>" + "<a href ='" + data[3][i] + "'>" + data[1][i] + "</a><p>" + data[2][i] + "</p></div>");
       }
     }
   });

@@ -125,7 +125,7 @@ input:focus, input:active, button:active, button:focus {
 }
 
 #result-container {
-	padding: 10px 0 5%;
+	padding: 10px 0 2%;
 	width: 100%;
 	display: none;
 }
@@ -143,15 +143,15 @@ input:focus, input:active, button:active, button:focus {
 	text-decoration: none;
 }
 
-.resultTable {
+.result-list {
 	padding: 20px;
 	margin: 10px;
 	background-color: #fcfcfc;
 	border-radius: 5px;
-	box-shadow: 2px 2px 4px rgba(0,0,0,.1)
+	box-shadow: 2px 2px 4px rgba(0,0,0,.1);
 }
 
-.resultTable p {
+.result-list p {
 	margin: 5px 0px 0px;
 }
 
@@ -159,13 +159,12 @@ input:focus, input:active, button:active, button:focus {
 	text-align: center;
 }
 
-/*footer {
-	width: 100%;
-	position: fixed;
-	bottom: 0;
+footer {
+    padding: 20px;
+    font-style: italic;
 	text-align: center;
-	font-size: 14px;
-}*/
+	display: none;
+}
 
 @media (max-width: 850px) {
 	.search-container {
