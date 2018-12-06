@@ -138,7 +138,7 @@ input:focus, input:active, button:active, button:focus {
 .results {
 	padding: 0;
 	margin: auto;
-	width: 75%;
+	width: 70%;
 }
 
 .results a {
@@ -154,7 +154,7 @@ input:focus, input:active, button:active, button:focus {
 
 .result-list {
 	padding: 20px;
-	margin: 10px;
+	margin: 10px 0;
 	background-color: #fcfcfc;
 	border-radius: 5px;
 	box-shadow: 2px 2px 4px rgba(0,0,0,.1);
