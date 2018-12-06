@@ -66,40 +66,18 @@ $("#query").autocomplete({
   }
 });
 
-/*function runSearch(searchInput) {
-  const wikiURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchInput + "&format=json&callback=?";
-  $.getJSON(wikiURL, function(result) {
-
-  })
-}*/
-
 function runSearch(searchInput) {
-  const wikiURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchInput + "&format=json&callback=?";
+  const wikiURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchInput + "&namespace=0&format=json&callback=?";
   $.getJSON (wikiURL, function(data) {
     console.log(data);
+    $(".results").html("");
+    if (data[1] == "" && data [2] == "" && data[3] == "") {
+      $(".results").append("<div class='error'><p>Sorry, we could not find any results matching <b>" + searchInput + "</b>.</p></div>");
+    }
+    else {
+      for (var i = 0; i < data[1].length; i++) {
+        $(".results").append("<div class='resultTable'>" + "<a href ='" + data[3][i] + "'>" + data[1][i] + "</a><p>" + data[2][i] + "</p></div>");
+      }
+    }
   });
 }
-
-/*function runSearch(srchString) {
-    // declare wikipedia search url variable
-    var wikiURL;
-    //construct wikiURL string
-    wikiURL = 'https://en.wikipedia.org/w/api.php?';
-    wikiURL += 'action=query&gsrlimit=10&prop=extracts&exintro&explaintext&exsentences=2&exlimit=max&generator=search&gsrsearch=' + srchString;
-    wikiURL += '&format=json&callback=?';
-
-    $.getJSON(wikiURL, function(result) {
-        var resultHTML = "";
-
-        $.each(result.query.pages, function(i, val) {
-            
-            resultHTML += '<div class="resultTable"><a ' + link(val.pageid) + '>' + val.title + '</a><p> ' + val.extract + '</p></div>';
-        });
-
-    $(".results").html(resultHTML);
-    }); 
-    
-    function link(pageID) {
-        return 'href="https://en.wikipedia.org/?curid=' + pageID + '" target="_blank"';
-    }
-}*/
