@@ -1,10 +1,10 @@
-const resultContainer = document.querySelector("#result-container");
-const query = document.querySelector("#query");
-const searchButton = document.querySelector("#search-button");
-const form = document.querySelector("#search-input");
-const container = document.querySelector(".container");
-const title = document.querySelector(".title");
-const footer = document.querySelector("footer");
+var resultContainer = document.querySelector("#result-container");
+var query = document.querySelector("#query");
+var searchButton = document.querySelector("#search-button");
+var form = document.querySelector("#search-input");
+var container = document.querySelector(".container");
+var title = document.querySelector(".title");
+var footer = document.querySelector("footer");
 
 //allows cursor focus on search input upon page load
 window.onload = function() {
@@ -18,9 +18,9 @@ function submitInput(event) {
   //prevent page reload upon submit
   event.preventDefault();
   //takes search input
-  const input = query.value;
+  var input = query.value;
   //removes white space in search input
-  const searchQuery = input.trim();
+  var searchQuery = input.trim();
   //submits if length more than 0
   if (searchQuery.length > 0) {
   //display result-container
@@ -70,7 +70,7 @@ $("#query").autocomplete({
 
 //search results
 function runSearch(searchInput) {
-  const wikiURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchInput + "&namespace=0&format=json&callback=?";
+  var wikiURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchInput + "&namespace=0&format=json&callback=?";
   //gets Wikipedia information
   $.getJSON (wikiURL, function(data) {
     $(".results").html("");
