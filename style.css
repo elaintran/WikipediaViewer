@@ -166,8 +166,6 @@ footer {
     font-style: italic;
 	display: none;
 	bottom: 0;
-	position: absolute;
-	width: 100%;
 }
 
 footer a {
@@ -197,6 +195,9 @@ footer a {
 @media (max-width: 565px) {
 	.title {
 		font-size: 45px;
+	}
+	.error {
+		width: 100%;
 	}
 }
 

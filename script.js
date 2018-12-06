@@ -75,6 +75,8 @@ function runSearch(searchInput) {
     $(".results").html("");
     if (data[1] == "" && data [2] == "" && data[3] == "") {
       $(".results").append("<div class='error'><p>Sorry, we could not find any results matching <b>" + searchInput + "</b>.</p><ul style='list-style-type:disc'><li>Make sure all words are spelled correctly.</li><li>Try different keywords.</li><li>Try more general keywords.</li></ul></div>");
+      footer.style.position = "absolute";
+      footer.style.width = "100%";
     }
     else {
       for (var i = 0; i < data[1].length; i++) {
