@@ -39,8 +39,8 @@ html, body {
 }
 
 .search {
-	position: relative;
 	width: 100%;
+	position: relative;
 	overflow: hidden;
 }
 
@@ -79,8 +79,8 @@ input:focus, input:active, button:active, button:focus {
 }
 
 .random:active, .random {
-	text-decoration: none;
 	color: #36c;
+	text-decoration: none;
 }
 
 .ui-autocomplete {
@@ -162,7 +162,6 @@ input:focus, input:active, button:active, button:focus {
 .error {
 	margin: auto;
 	width: 600px;
-	/*text-align: center;*/
 }
 
 footer {
