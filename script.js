@@ -80,8 +80,9 @@ function runSearch(searchInput) {
     }
     else {
       for (var i = 0; i < data[1].length; i++) {
-        $(".results").append("<div class='result-list'>" + "<a href ='" + data[3][i] + "'>" + data[1][i] + "</a><p>" + data[2][i] + "</p></div>");
+        $(".results").append("<a href ='" + data[3][i] + "'><div class='result-list'><div class='result-title'>" + data[1][i] + "</div><p>" + data[2][i] + "</p></div></a>");
       }
+      footer.style.position = "";
     }
   });
 }
