@@ -20,6 +20,7 @@ html, body {
 	vertical-align: middle;
 }
 
+/* Wikipedia Viewer Title */
 .title {
 	font-family: "Roboto Slab", sans-serif;
 	font-size: 60px;
@@ -32,6 +33,7 @@ html, body {
 	font-style: normal;
 }
 
+/* Search Bar */
 .search-container {
 	margin: auto;
 	width: 600px;
@@ -78,11 +80,13 @@ input:focus, input:active, button:active, button:focus {
 	z-index: 10;
 }
 
+/* Random Article */
 .random:active, .random {
 	color: #36c;
 	text-decoration: none;
 }
 
+/*jQuery Autocomplete Style Override */
 .ui-autocomplete {
   	position: absolute;
   	top: 0;
@@ -124,6 +128,7 @@ input:focus, input:active, button:active, button:focus {
     border-radius: 0 0 10px 10px;
 }
 
+/* Search Results */
 #result-container {
 	padding: 10px 0 2%;
 	width: 100%;
@@ -159,11 +164,13 @@ input:focus, input:active, button:active, button:focus {
 	margin: 5px 0px 0px;
 }
 
+/* Result Error */
 .error {
 	margin: auto;
 	width: 600px;
 }
 
+/* Footer */
 footer {
     padding: 20px 0px;
     font-style: italic;

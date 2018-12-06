@@ -68,16 +68,19 @@ $("#query").autocomplete({
   }
 });
 
+//search results
 function runSearch(searchInput) {
   const wikiURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchInput + "&namespace=0&format=json&callback=?";
+  //gets Wikipedia information
   $.getJSON (wikiURL, function(data) {
-    console.log(data);
     $(".results").html("");
+    //if no matching results, display error
     if (data[1] == "" && data [2] == "" && data[3] == "") {
       $(".results").append("<div class='error'><p>Sorry, we could not find any results matching <b>" + searchInput + "</b>.</p><ul style='list-style-type:disc'><li>Make sure all words are spelled correctly.</li><li>Try different keywords.</li><li>Try more general keywords.</li></ul></div>");
       footer.style.position = "absolute";
       footer.style.width = "100%";
     }
+    //loops through and display results
     else {
       for (var i = 0; i < data[1].length; i++) {
         $(".results").append("<a href ='" + data[3][i] + "'><div class='result-list'><div class='result-title'>" + data[1][i] + "</div><p>" + data[2][i] + "</p></div></a>");
