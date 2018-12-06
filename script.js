@@ -70,21 +70,24 @@ $("#query").autocomplete({
 
 //search results
 function runSearch(searchInput) {
-  var wikiURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchInput + "&namespace=0&format=json&callback=?";
+  var wikiURL = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=extracts&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=" + searchInput + "&gsrinfo=totalhits&format=json&callback=?";
   //gets Wikipedia information
   $.getJSON (wikiURL, function(data) {
+    console.log(data);
     $(".results").html("");
+    //put object in array
+    var resultArray = Object.keys(data);
     //if no matching results, display error
-    if (data[1] == "" && data [2] == "" && data[3] == "") {
+    if (resultArray.length < 3) {
       $(".results").append("<div class='error'><p>Sorry, we could not find any results matching <b>" + searchInput + "</b>.</p><ul style='list-style-type:disc'><li>Make sure all words are spelled correctly.</li><li>Try different keywords.</li><li>Try more general keywords.</li></ul></div>");
       footer.style.position = "absolute";
       footer.style.width = "100%";
     }
     //loops through and display results
     else {
-      for (var i = 0; i < data[1].length; i++) {
-        $(".results").append("<a href ='" + data[3][i] + "'><div class='result-list'><div class='result-title'>" + data[1][i] + "</div><p>" + data[2][i] + "</p></div></a>");
-      }
+      for (var i in data.query.pages) {
+        $(".results").append("<a href ='https://en.wikipedia.org/wiki?curid=" + data.query.pages[i].pageid + "'><div class='result-list'><div class='result-title'>" + data.query.pages[i].title + "</div><p>" + data.query.pages[i].extract + "</p></div></a>");
+        }
       footer.style.position = "";
     }
   });
