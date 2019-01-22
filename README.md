@@ -1,6 +1,6 @@
 # WikipediaViewer
 <p>Wikipedia Viewer is a search engine that uses the MediaWiki Web API to pull information from Wikipedia and places them into individual entries that links back to the original article. The web application retains the same color palette as Wikipedia to keep it looking consistent and the design of the search bar was inspired by Google.</p>
-## USER STORIES
+## User Stories
 <p>One of freeCodeCamp’s take home projects is to build a Wikipedia article previewer with the following user stories:</p>
 <ul>
   <li>I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.</li>
